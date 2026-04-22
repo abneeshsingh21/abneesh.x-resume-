@@ -154,14 +154,14 @@
         .resume-btn:hover { background: rgba(0, 240, 255, 0.1); box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); color: white !important; }
 
         /* Hero Section */
-        .hero { display: flex; justify-content: center; align-items: center; gap: 8vw; margin-bottom: 12vh; }
+        .hero { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12vh; }
         .hero-left h1 { font-family: var(--font-serif); font-size: clamp(3rem, 7vw, 7rem); font-weight: 400; line-height: 1; margin-bottom: 2rem; color: white; text-shadow: 3px 0 0 var(--crt-red), -3px 0 0 var(--crt-blue); }
         .hero-left h1 i { font-style: italic; color: var(--text-muted); }
         .hero-left p { font-family: var(--font-mono); max-width: 550px; font-size: 0.95rem; line-height: 1.8; color: var(--text-muted); border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1.5rem; }
 
-        .hero-right { position: relative; transform-style: preserve-3d; display: flex; justify-content: center; align-items: center; }
-        .profile-img { width: 100%; max-width: 450px; height: auto; object-fit: contain; -webkit-mask-image: radial-gradient(circle, black 50%, transparent 80%); mask-image: radial-gradient(circle, black 50%, transparent 80%); filter: drop-shadow(0 0 20px rgba(0, 255, 0, 0.15)) contrast(1.1) brightness(1.1); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.5s; pointer-events: none; }
-        .hero-right:hover .profile-img { filter: drop-shadow(0 0 40px rgba(0, 255, 0, 0.4)) contrast(1.2) brightness(1.2); transform: scale(1.05) translateY(-10px); }
+        .hero-right { position: relative; transform-style: preserve-3d; }
+        .profile-img { width: 320px; height: 420px; object-fit: cover; filter: grayscale(100%) contrast(1.1) brightness(0.8); border: 1px solid rgba(255,255,255,0.05); box-shadow: 20px 20px 60px rgba(0,0,0,0.8); transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.2s; }
+        .profile-img:hover { filter: grayscale(20%) contrast(1.1) brightness(1); transform: scale(1.02); }
 
         /* Cyberpunk Glitch Animation */
         @keyframes cyber-glitch {
@@ -190,31 +190,31 @@
         .terminal-input-line input { background: transparent; border: none; color: white; font-family: var(--font-mono); font-size: 0.85rem; flex-grow: 1; outline: none; caret-color: var(--neon-green); }
 
         /* Sections & Projects */
-        .section-title { font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--text-main); margin-bottom: 3rem; display: flex; align-items: center; gap: 20px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 2rem; }
+        .section-title { font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--text-main); margin-bottom: 3rem; display: flex; align-items: center; gap: 20px; }
         .section-title::after { content: ''; height: 1px; background: rgba(255,255,255,0.1); flex-grow: 1; }
         .decode-text { visibility: hidden; }
-        .project-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 12vh; max-width: 1200px; margin-left: auto; margin-right: auto; }
-        .project { padding: 4rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); display: grid; grid-template-columns: 1.2fr 2fr 1.8fr; align-items: center; transition: background 0.4s, padding-left 0.4s; position: relative; text-decoration: none; }
-        .project:hover { background: rgba(255,255,255,0.02); padding-left: 2.5rem; }
+        .project-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 12vh; }
+        .project { padding: 4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: grid; grid-template-columns: 1fr 2fr 1.5fr; align-items: center; transition: background 0.4s; position: relative; text-decoration: none; }
+        .project:hover { background: rgba(255,255,255,0.02); }
         .proj-meta { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
         .proj-title { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 400; font-style: italic; color: white; transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); display: flex; align-items: center; gap: 15px; }
         .view-source { font-family: var(--font-mono); font-size: 0.7rem; border: 1px solid var(--neon-blue); color: var(--neon-blue); padding: 4px 10px; text-transform: uppercase; font-style: normal; border-radius: 4px; letter-spacing: 0.1em; transition: background 0.3s, color 0.3s; }
         a.project:hover .view-source { background: rgba(0, 240, 255, 0.1); }
-        .project:hover .proj-title { transform: translateX(20px); text-shadow: 2px 0 0 var(--crt-red), -2px 0 0 var(--crt-blue); }
-        .proj-details { display: flex; flex-direction: column; gap: 15px; justify-self: end; }
-        .proj-desc { font-size: 0.9rem; color: var(--text-muted); max-width: 400px; line-height: 1.6; }
+        .project:hover .proj-title { transform: translateX(30px); text-shadow: 2px 0 0 var(--crt-red), -2px 0 0 var(--crt-blue); }
+        .proj-details { display: flex; flex-direction: column; gap: 15px; }
+        .proj-desc { font-size: 0.9rem; color: var(--text-muted); max-width: 380px; line-height: 1.6; }
         .proj-tech { display: flex; flex-wrap: wrap; gap: 8px; }
         .proj-tech span { font-size: 0.7rem; color: #aaaaaa; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); padding: 4px 8px; border-radius: 2px; text-transform: uppercase; }
 
         /* Arsenal Grid */
-        .arsenal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 12vh; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 2rem; }
+        .arsenal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 12vh; }
         .arsenal-category h4 { font-family: var(--font-serif); font-size: 1.5rem; color: white; font-style: italic; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
         .arsenal-category ul { list-style: none; color: var(--text-muted); line-height: 2.2; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
         .arsenal-category ul li { position: relative; padding-left: 15px; transition: color 0.2s; }
         .arsenal-category ul li:hover { color: white; }
         .arsenal-category ul li::before { content: '>'; position: absolute; left: 0; color: rgba(255,255,255,0.3); }
 
-        footer { border-top: 1px solid rgba(255,255,255,0.1); padding: 3rem 2rem 2rem 2rem; display: flex; justify-content: space-between; color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; max-width: 1200px; margin: 0 auto; }
+        footer { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 3rem; display: flex; justify-content: space-between; color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2rem; }
 
         /* Boot Sequence */
         /* Boot Sequence */
@@ -265,11 +265,12 @@
                     <span class="status-text">AGENT IDLE</span>
                 </div>
             </div>
-            <nav class="nav-links">
-        <a href="https://github.com/abneeshsingh21" target="_blank" class="hover-target">GITHUB</a>
-        <a href="https://linkedin.com/in/abneesh-singh001" target="_blank" class="hover-target">LINKEDIN</a>
-        <a href="mailto:singhabneesh250@gmail.com" class="hover-target">CONTACT</a>
-    </nav>        </div>
+            <div class="nav-links">
+                <a href="https://github.com/abneeshsingh21" class="hover-target" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/abneesh-singh001" class="hover-target" target="_blank">LinkedIn</a>
+                <a href="mailto:singhabneesh250@gmail.com" class="hover-target">Contact</a>
+                <a href="./Abneesh_Singh_FAANG_Template.html" target="_blank" class="hover-target resume-btn">[ DOWNLOAD_RESUME ]</a>
+            </div>
         </header>
 
         <section class="hero">
@@ -280,8 +281,8 @@
                     I am an AI Engineer specializing in autonomous workflows, compiler design, and offensive security AI. I build intelligent systems that bridge natural language with direct OS-level execution.
                 </p>
             </div>
-            <div class="hero-right">
-                <img src="avatar.png" alt="Terminal Avatar" class="profile-img">
+            <div class="hero-right hover-target">
+                <img src="WhatsApp Image 2026-04-22 at 4.37.35 AM.jpeg" alt="Abneesh Singh" class="profile-img">
             </div>
         </section>
 
